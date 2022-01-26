@@ -12,7 +12,6 @@ def index(request):
     feature1.name = 'Fast'
     feature1.is_t = True
     feature1.details = 'This is very fast'
-    
     features = [feature1]
     for feature in features:
         pass
@@ -24,7 +23,6 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
         password2 = request.POST['password2']
-        
         if password == password2:
             if  User.objects.filter(email=email).exists():
                 messages.info(request,'Email Already in use!!!')
@@ -41,24 +39,19 @@ def register(request):
             return redirect('register')
     else:
         return render(request,'register.html')
-    
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        
         user = auth.authenticate(username=username, password=password)
-        
         if user is not None:
             auth.login(request, user)
             return redirect('/')
         else:
             messages.info(request,'Credential Invalid')
             return redirect('login')
-        
     else:
         return render(request,'login.html')
-    
 def logout(request):
     auth.logout(request)
     return redirect('/')
@@ -70,7 +63,6 @@ def counter(request):
 def post(request,pk):
     return render(request,'post.html',{'pk': pk})
 def add_malls(request):
-    
     if  request.method == 'POST':
         mallname = request.POST['mall_name']
         product1 = request.POST['product1']
@@ -146,4 +138,3 @@ def shop_details(request):
 
 def add_brands(request):
     return render(request,'add_brands.html')
-    
