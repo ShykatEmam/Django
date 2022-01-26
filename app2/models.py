@@ -9,13 +9,8 @@ class Feature(models.Model):
     def __str__(self):
         return self.name
         
-class Product(models.Model):
-    name: models.CharField(max_length=100)
-    description: models.TextField()
-    price: models.CharField(max_length=100)
-    sale: models.CharField(max_length=100)
-    created_at: models.DateTimeField(auto_now_add=True)
-class Malls(models.Model):
+
+class ShoppingMalls(models.Model):
     mallname: models.TextField(max_length=100)
     product1: models.CharField(max_length=75)
     product2: models.CharField(max_length=75)

@@ -110,6 +110,7 @@ def add_malls(request):
         # else:
         shoppingMalls = Malls.objects.create(mallname=mallname, product1=product1,product2=product2,product3=product3,product4=product4,product5=product5,product6=product6,product7=product7,link1=link1,link2=link2,link3=link3,link4=link4,division=division,location=location,phone1=phone1,phone2=phone2,phone3=phone3,phone4=phone4,images=images,mall_description=mall_description)
         shoppingMalls.save();
+        return redirect('/')
 
     else:
         messages.info(request,'something went wrong')

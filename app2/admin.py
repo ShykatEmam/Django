@@ -1,10 +1,11 @@
 from django.contrib import admin
 from .models import Feature
-from .models import Malls
-from .models import Product
+from .models import ShoppingMalls
 
 # Register your models here.
-admin.site.register(Product)
-class MallsAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(Malls, MallsAdmin)
+class FeatureAdmin(admin.ModelAdmin):pass
+
+admin.site.register(Feature)
+
+
+admin.site.register(ShoppingMalls)
