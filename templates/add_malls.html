@@ -1,0 +1,180 @@
+<style>
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    input[type=url] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid black;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    input[type=email] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid black;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    p {
+        font-size: 24px;
+    }
+    
+    #location {
+        height: 100px;
+    }
+    
+    #mall_description {
+        height: 100px;
+    }
+</style>
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+<h1>Add Mall details here to add in Database</h1>
+
+<form action="add_malls" method="POST" style="margin-left: 5%;">
+    {% csrf_token %}
+    <input type="text" id="mall_name" name="mall_name" placeholder="Mall name" required/> Available products:
+    <input type="checkbox" id="product1" name="product1" value="TV & Home Appliances" />
+    <label for="product1">TV & Home Appliances</label>
+    <br>
+    <input type="checkbox" id="product2" name="product2" value="Electronic Devices" />
+    <label for="product2">Electronic Devices</label>
+    <br>
+    <input type="checkbox" id="product3" name="product3" value="Clothes & Fashion" />
+    <label for="product3">Clothes & Fashion</label>
+    <br>
+    <input type="checkbox" id="product4" name="product4" value="Home & Lifestyle" />
+    <label for="product4">Home & Lifestyle</label>
+    <br>
+    <input type="checkbox" id="product5" name="product5" value="Health & Beauty" />
+    <label for="product5">Health & Beauty</label>
+    <br>
+    <input type="checkbox" id="product6" name="product6" value="Accessories" />
+    <label for="product6">Accessories</label>
+    <br>
+    <input type="checkbox" id="product7" name="product7" value="Food court" />
+    <label for="product7">Food court</label>
+    <br> All available links for malls
+    <label for="link1">Website link:</label>
+    <input type="url" name="link1" id="link1" />
+    <label for="link2">Facebook Link:</label>
+    <input type="url" name="link2" id="link2" />
+
+    <label for="link3">Gmail Link:</label>
+    <input type="email" name="link3" id="link3" placeholder="example@example.com" />
+
+    <label for="link4">Youtube Link:</label>
+    <input type="url" name="link4" id="link4" /> Address
+    <label for="division">Choose a division:</label>
+    <select name="division" id="division" required>
+        <option value="">---Choose a division---</option>
+        <option value="barisal">Barisal</option>
+        <option value="chittagong">Chittagong</option>
+        <option value="dhaka">Dhaka</option>
+        <option value="khulna">Khulna</option>
+        <option value="mymensingh">Mymensingh</option>
+        <option value="rajshahi">Rajshahi</option>
+        <option value="rangpur">Rangpur</option>
+        <option value="sylhet">Sylhet</option>
+        </select>
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location" placeholder="address" required/> Phone numbers:
+    <input type="checkbox" id="phone1" name="phone1" value="tel1" />
+    <label for="phone1">
+        <input type="tel" id="tel1" name="tel1">
+    </label>
+    <br>
+    <br>
+    <input type="checkbox" id="phone2" name="phone2" value="tel2" />
+    <label for="phone2">
+        <input type="tel" id="tel2" name="tel2">
+    </label>
+    <br>
+    <br>
+    <input type="checkbox" id="phone3" name="phone3" value="tel3" />
+    <label for="phone3">
+        <input type="tel" id="tel3" name="tel3">
+    </label>
+    <br>
+    <br>
+    <input type="checkbox" id="phone4" name="phone4" value="tel4" />
+    <label for="phone1">
+        <input type="tel" id="tel4" name="tel4">
+    </label>
+    <br>
+    <br> Images for mall(if you want to upload multiple images select all images as bulk):
+    <input type="file" name="images" multiple accept="image/*" required/> mall description
+    <input type="text" name="mall_description" id="mall_description" placeholder="Mall Description" required/> mall facilities:
+    <input type="submit" />
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {% comment %} <h1>Add shopping mall details here to add in Database</h1>
+<style>
+    h3 {
+        color: red;
+        font-style: oblique;
+    }
+</style>
+
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+
+<form action="add_malls" method="POST">
+    {% csrf_token %}
+    <p>Username</p>
+    <input type="text" name="username">
+    <p>Password</p>
+    <input type="password" name="password">
+    <br>
+    <br>
+    <input type="submit" />
+</form> {% endcomment %} -->

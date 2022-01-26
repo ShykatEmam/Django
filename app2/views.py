@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Feature
+from .models import ShoppingMalls
 
 # Create your views here.
 def index(request):
@@ -68,3 +69,81 @@ def counter(request):
 
 def post(request,pk):
     return render(request,'post.html',{'pk': pk})
+def add_malls(request):
+    
+    if  request.method == 'POST':
+        mallname = request.POST['mall_name']
+        product1 = request.POST['product1']
+        product2 = request.POST['product2']
+        product3 = request.POST['product3']
+        product4 = request.POST['product4']
+        product5 = request.POST['product5']
+        product6 = request.POST['product6']
+        product7 = request.POST['product7']
+        link1 = request.POST['link1']
+        link2 = request.POST['link2']
+        # gmail = link3
+        link3 = request.POST['link3']
+        link4 = request.POST['link4']
+        division = request.POST['division']
+        location = request.POST['location']
+
+        phone1 = request.POST['phone1']
+        phone2 = request.POST['phone2']
+        phone3 = request.POST['phone3']
+        phone4 = request.POST['phone4']
+        images = request.POST['images']
+        mall_description = request.POST['mall_description']
+        # if ShoppingMalls.objects.filter(mall_name=mall_name).exist():
+        #     messages.info(request,'Mall name already Exist!!!')
+        #     return redirect('add_malls')
+        # elif ShoppingMalls.objects.filter(link1=link1).exists():
+        #     messages.info(request,'Websites already exist!!!')
+        #     return redirect('add_malls')
+        # elif ShoppingMalls.objects.filter(link2=link2).exists():
+        #     messages.info(request,'Facebook link already exist!!!')
+        #     return redirect('add_malls')
+        # elif ShoppingMalls.objects.filter(link3=link3).exists():
+        #     messages.info(request,'Gmail already exist!!!')
+        #     return redirect('add_malls')
+        # elif ShoppingMalls.objects.filter(link4=link4).exists():
+        #     messages.info(request,'Link already exist!!!')
+        #     return redirect('add_malls')
+        # elif ShoppingMalls.objects.filter(phone1=phone1).exists():
+        #     messages.info(request,'Number already exist!!!')
+        #     return redirect('add_malls')
+        # else:
+        shoppingMalls = ShoppingMalls.create(mallname=mallname, product1=product1,product2=product2,product3=product3,product4=product4,product5=product5,product6=product6,product7=product7,link1=link1,link2=link2,link3=link3,link4=link4,division=division,location=location,phone1=phone1,phone2=phone2,phone3=phone3,phone4=phone4,images=images,mall_description=mall_description)
+        shoppingMalls.save();
+
+    else:
+        messages.info(request,'something went wrong')
+        return render(request,'add_malls.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def shops(request):
+    return render(request,'shops.html')
+def brands(request):
+    return render(request,'brand.html')
+def about(request):
+    return render(request,'about.html')
+def brand_details(request):
+    return render(request,'brand_details.html')
+def shop_details(request):
+    return render(request,'shop_details.html')
+
+def add_brands(request):
+    return render(request,'add_brands.html')
+    

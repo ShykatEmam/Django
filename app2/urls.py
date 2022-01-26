@@ -3,10 +3,14 @@ from . import views
 
 urlpatterns = [
     path('',views.index, name='index'),
-    path('counter', views.counter, name='counter'),
-    # adding register url
-    path('register', views.register, name='register'),
+    path('about', views.about, name='about'),
+    path('brand_details/<str:brand_name>', views.brand_details, name='brand_details'),
+    path('brands', views.brands, name='brands'),
     path('login', views.login, name='login'),
+    path('register', views.register, name='register'),
     path('logout', views.logout, name='logout'),
-    path('post/<str:pk>', views.post, name='post'),
+    path('shop_details/<str:shop_name>', views.shop_details, name='shop_details'),
+    path('shops', views.shops, name='shops'),
+    path('add_malls', views.add_malls, name='add_malls'),
+    path('add_brands', views.add_brands, name='add_brands'),
 ]
