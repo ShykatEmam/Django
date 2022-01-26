@@ -35,9 +35,8 @@ class Feature(models.Model):
         return self.name
 class ShoppingMalls(models.Model):
    #owner
-    title_new = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
     description = models.TextField(null=False)
-    division = models.CharField(max_length=200)
     address = models.TextField(null=False)
     
     category_1 = models.CharField(max_length=200,null=True,blank=True)
@@ -48,14 +47,53 @@ class ShoppingMalls(models.Model):
     category_6 = models.CharField(max_length=200,null=True,blank=True)
     category_7 = models.CharField(max_length=200,null=True,blank=True)
     # featured_image
+    
+    gmail_link = models.CharField(max_length=1000,null=True,blank=True)
     website_link = models.CharField(max_length=1000,null=True,blank=True)
     facebook_link = models.CharField(max_length=1000,null=True,blank=True)
     other_link = models.CharField(max_length=1000,null=True,blank=True)
     
+    phone_1 = models.CharField(max_length=50,null=True,blank=True)
+    phone_2 = models.CharField(max_length=50,null=True,blank=True)
+    phone_3 = models.CharField(max_length=50,null=True,blank=True)
+    phone_4 = models.CharField(max_length=50,null=True,blank=True)
+    
+    facilities_1 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_2 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_3 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_4 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_5 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_6 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_7 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_8 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_9 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_10 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_11 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_12 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_13 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_14 = models.CharField(max_length=200,null=True,blank=True)
+    facilities_15 = models.CharField(max_length=200,null=True,blank=True)
+
+    floors_1 = models.CharField(max_length=200,null=True,blank=True)
+    floors_2 = models.CharField(max_length=200,null=True,blank=True)
+    floors_3 = models.CharField(max_length=200,null=True,blank=True)
+    floors_4 = models.CharField(max_length=200,null=True,blank=True)
+    floors_5 = models.CharField(max_length=200,null=True,blank=True)
+    floors_6 = models.CharField(max_length=200,null=True,blank=True)
+    floors_7 = models.CharField(max_length=200,null=True,blank=True)
+    floors_8 = models.CharField(max_length=200,null=True,blank=True)
+    floors_9 = models.CharField(max_length=200,null=True,blank=True)
+    floors_10 = models.CharField(max_length=200,null=True,blank=True)
+    floors_11 = models.CharField(max_length=200,null=True,blank=True)
+    floors_12 = models.CharField(max_length=200,null=True,blank=True)
+    
+    
+    
+    
+    
     division = models.CharField(max_length=200)
     image = models.ImageField(upload_to='uploads/',null=True)
-    vote_total = models.IntegerField(default=0)
-    vote_ratio = models.IntegerField(default=0)
+
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 

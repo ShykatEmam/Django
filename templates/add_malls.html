@@ -6,6 +6,7 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
+        margin-left: 5%;
     }
     
     input[type=url] {
@@ -24,6 +25,10 @@
         border: 1px solid black;
         border-radius: 4px;
         box-sizing: border-box;
+    }
+    
+    input[type=checkbox] {
+        margin-top: 10px;
     }
     
     p {
@@ -66,6 +71,7 @@
     <br>
     <input type="checkbox" id="product7" name="product7" value="Food court" />
     <label for="product7">Food court</label>
+
     <br> All available links for malls
     <label for="link1">Website link:</label>
     <input type="url" name="link1" id="link1" />
@@ -76,7 +82,8 @@
     <input type="email" name="link3" id="link3" placeholder="example@example.com" />
 
     <label for="link4">Youtube Link:</label>
-    <input type="url" name="link4" id="link4" /> Address
+    <input type="url" name="link4" id="link4" />
+    <p>Address:</p>
     <label for="division">Choose a division:</label>
     <select name="division" id="division" required>
         <option value="">---Choose a division---</option>
@@ -88,9 +95,12 @@
         <option value="rajshahi">Rajshahi</option>
         <option value="rangpur">Rangpur</option>
         <option value="sylhet">Sylhet</option>
-        </select>
-    <label for="location">Location:</label>
-    <input type="text" name="location" id="location" placeholder="address" required/> Phone numbers:
+    </select>
+    <br>
+    <label for="location"><p>Location:</p></label>
+    <input type="text" name="location" id="location" placeholder="address" required/>
+    <br>
+    <p> Phone numbers:</p>
     <input type="checkbox" id="phone1" name="phone1" value="tel1" />
     <label for="phone1">
         <input type="tel" id="tel1" name="tel1">
@@ -110,13 +120,157 @@
     <br>
     <br>
     <input type="checkbox" id="phone4" name="phone4" value="tel4" />
-    <label for="phone1">
+    <label for="phone4">
         <input type="tel" id="tel4" name="tel4">
     </label>
+
     <br>
     <br> Images for mall(if you want to upload multiple images select all images as bulk):
-    <input type="file" name="images" multiple accept="image/*" required/> mall description
-    <input type="text" name="mall_description" id="mall_description" placeholder="Mall Description" required/> mall facilities:
+    <input type="file" name="images" multiple accept="image/*" required/>
+    <p>Mall description:</p>
+    <input type="text" name="mall_description" id="mall_description" placeholder="Mall Description" required/>
+    <br>
+    <p>Facility</p>
+    <div>
+
+        <label for="facilities_1">
+            <input type="checkbox" id="facilities1" name="facilities1" value="facilities_1" />
+            <input type="text" id="facilities_1" name="facilities_1" placeholder="example:">
+        </label>
+    </div>
+
+    <br>
+    <input type="checkbox" id="facilities2" name="facilities2" value="facilities_2" />
+    <label for="facilities_2">
+        <input type="text" id="facilities_2" name="facilities_2" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities3" name="facilities3" value="facilities_3" />
+    <label for="facilities_3">
+        <input type="text" id="facilities_3" name="facilities_3" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities4" name="facilities4" value="facilities_4" />
+    <label for="facilities_4">
+        <input type="text" id="facilities_4" name="facilities_4" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities5" name="facilities5" value="facilities_5" />
+    <label for="facilities_5">
+        <input type="text" id="facilities_5" name="facilities_5" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities6" name="facilities6" value="facilities_6" />
+    <label for="facilities_6">
+        <input type="text" id="facilities_6" name="facilities_6" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities7" name="facilities7" value="facilities_7" />
+    <label for="facilities_7">
+        <input type="text" id="facilities_7" name="facilities_7" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities8" name="facilities8" value="facilities_8" />
+    <label for="facilities_8">
+        <input type="text" id="facilities_8" name="facilities_8" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities9" name="facilities9" value="facilities_9" />
+    <label for="facilities_9">
+        <input type="text" id="facilities_9" name="facilities_9" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities10" name="facilities10" value="facilities_10" />
+    <label for="facilities_10">
+        <input type="text" id="facilities_10" name="facilities_10" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities11" name="facilities11" value="facilities_11" />
+    <label for="facilities_11">
+        <input type="text" id="facilities_11" name="facilities_11" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities12" name="facilities12" value="facilities_12" />
+    <label for="facilities_12">
+        <input type="text" id="facilities_12" name="facilities_12" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities13" name="facilities13" value="facilities_13" />
+    <label for="facilities_13">
+        <input type="text" id="facilities_13" name="facilities_13" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities14" name="facilities14" value="facilities_14" />
+    <label for="facilities_14">
+        <input type="text" id="facilities_14" name="facilities_14" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="facilities15" name="facilities15" value="facilities_15" />
+    <label for="facilities_15">
+        <input type="text" id="facilities_15" name="facilities_15" placeholder="example:">
+    </label>
+    <br>
+    <p>Floors</p>
+    <input type="checkbox" id="floors1" name="floors1" value="floors_1" />
+    <label for="floors_1">
+        <input type="text" id="floors_1" name="floors_1" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors2" name="floors2" value="floors_2" />
+    <label for="floors_2">
+        <input type="text" id="floors_2" name="floors_2" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors3" name="floors3" value="floors_3" />
+    <label for="floors_3">
+        <input type="text" id="floors_3" name="floors_3" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors4" name="floors4" value="floors_4" />
+    <label for="floors_4">
+        <input type="text" id="floors_4" name="floors_4" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors5" name="floors5" value="floors_5" />
+    <label for="floors_5">
+        <input type="text" id="floors_5" name="floors_5" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors6" name="floors6" value="floors_6" />
+    <label for="floors_6">
+        <input type="text" id="floors_6" name="floors_6" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors7" name="floors7" value="floors_7" />
+    <label for="floors_7">
+        <input type="text" id="floors_7" name="floors_7" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors8" name="floors8" value="floors_8" />
+    <label for="floors_8">
+        <input type="text" id="floors_8" name="floors_8" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors9" name="floors9" value="floors_9" />
+    <label for="floors_9">
+        <input type="text" id="floors_9" name="floors_9" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors10" name="floors10" value="floors_10" />
+    <label for="floors_10">
+        <input type="text" id="floors_10" name="floors_10" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors11" name="floors11" value="floors_11" />
+    <label for="floors_11">
+        <input type="text" id="floors_11" name="floors_11" placeholder="example:">
+    </label>
+    <br>
+    <input type="checkbox" id="floors12" name="floors12" value="floors_12" />
+    <label for="floors_12">
+        <input type="text" id="floors_12" name="floors_12" placeholder="example:">
+    </label>
+    <br>
     <input type="submit" />
 </form>
 
