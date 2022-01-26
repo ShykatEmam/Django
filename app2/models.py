@@ -29,4 +29,4 @@ class ShoppingMalls(models.Model):
     mall_description: models.CharField(max_length=1000)
     
     def __str__(self):
-        return self.name
+        return f"{self.mallname},{self.product1}"
