@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.db.models import Model
 
@@ -8,19 +9,25 @@ class Feature(models.Model):
     def __str__(self):
         return self.name
 class ShoppingMalls(models.Model):
-    mallname: models.TextField(max_length=100)
-    product1: models.CharField(max_length=75)
-    product2: models.CharField(max_length=75)
-    product3: models.CharField(max_length=75)
-    product4: models.CharField(max_length=75)
-    product5: models.CharField(max_length=75)
-    product6: models.CharField(max_length=75)
-    product7: models.CharField(max_length=75)
-    link1: models.URLField(max_length=200)
-    link2: models.URLField(max_length=200)
-    link3: models.EmailField(max_length=100)
-    link4: models.URLField(max_length=200)
-    division: models.CharField(max_length=50)
-    location: models.URLField(max_length=200)
-    images: models.ImageField(upload_to='upload_to/')
-    mall_description: models.CharField(max_length=1000)
+   #owner
+    title = models.CharField(max_length=200)
+    description = models.TextField(null=False)
+    # featured_image
+    demo_link = models.CharField(max_length=1000)
+    source_link = models.CharField(max_length=1000)
+    vote_total = models.IntegerField(default=0)
+    vote_ratio = models.IntegerField(default=0)
+    created = models.DateTimeField(auto_now_add=True)
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+class Product(models.Model):
+    #owner
+    title = models.CharField(max_length=200)
+    description = models.TextField(null=False)
+    # featured_image
+    demo_link = models.CharField(max_length=1000)
+    source_link = models.CharField(max_length=1000)
+    vote_total = models.IntegerField(default=0)
+    vote_ratio = models.IntegerField(default=0)
+    created = models.DateTimeField(auto_now_add=True)
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
