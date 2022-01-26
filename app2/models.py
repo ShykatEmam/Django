@@ -6,7 +6,7 @@ class Feature(models.Model):
     name: models.CharField(max_length=100)
     details: models.CharField(max_length=500)
 
-class ShoppingMalls(models.Model):
+class Malls(models.Model):
     mallname: models.TextField(max_length=100)
     product1: models.CharField(max_length=75)
     product2: models.CharField(max_length=75)

@@ -15,8 +15,9 @@ def index(request):
     features = [feature1]
     for feature in features:
         pass
-
     return render(request,'index.html',{'features':features})
+
+
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -39,6 +40,8 @@ def register(request):
             return redirect('register')
     else:
         return render(request,'register.html')
+
+
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
