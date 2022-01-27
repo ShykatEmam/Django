@@ -134,8 +134,6 @@ class Brands(models.Model):
     showrooms_phone_18 = models.CharField(max_length=50,null=True,blank=True)
     showrooms_19 = models.CharField(max_length=200,null=True,blank=True)
     showrooms_phone_19 = models.CharField(max_length=50,null=True,blank=True)
-    showrooms_20 = models.CharField(max_length=200,null=True,blank=True)
-    showrooms_phone_20 = models.CharField(max_length=50,null=True,blank=True)
 
     image_0 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
     image_1 = models.ImageField(upload_to='static/assets/img/brands/',null=True)

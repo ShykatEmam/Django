@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Feature
+from .models import Brands, Feature
 from .models import ShoppingMalls
 # Create your views here.
 # def index(request):
@@ -136,9 +136,10 @@ def add_malls(request):
 
         shoppingMalls = ShoppingMalls.objects.create(shopping_mall_name =shopping_mall_name,description=mall_description,address=location,category_1=category_1,category_2=category_2,category_3=category_3,category_4=category_4,category_5=category_5,category_6=category_6,category_7=category_7,gmail_link=link1,website_link=link2,facebook_link=link3,other_link=link4,phone_1=phone_1,phone_2=phone_2,phone_3=phone_3,phone_4=phone_4,facilities_1=facilities_1,facilities_2=facilities_2,facilities_3=facilities_3,facilities_4=facilities_4,facilities_5=facilities_5,facilities_6=facilities_6,facilities_7=facilities_7,facilities_8=facilities_8,facilities_9=facilities_9,facilities_10=facilities_10,facilities_11=facilities_11,facilities_12=facilities_12,facilities_13=facilities_13,facilities_14=facilities_14,facilities_15=facilities_15,floors_1=floors_1,floors_2=floors_2,floors_3=floors_3,floors_4=floors_4,floors_5=floors_5,floors_6=floors_6,floors_7=floors_7,floors_8=floors_8,floors_9=floors_9,floors_10=floors_10,floors_11=floors_11,floors_12=floors_12,division=division,image_0=image_0,image_1=image_1,image_2=image_2,image_3=image_3,image_4=image_4)
         shoppingMalls.save();
-        return redirect('/')
+        messages.info(request,'Mall Successfully Added')
+        return render(request,'add_malls.html')
     else:
-        messages.info(request,'something went wrong')
+        messages.info(request,'Add correct data!!!')
         return render(request,'add_malls.html')
 
 
@@ -166,4 +167,75 @@ def shop_details(request):
     return render(request,'shop_details.html')
 
 def add_brands(request):
-    return render(request,'add_brands.html')
+    if  request.method == 'POST':
+        brand_name = request.POST['brand_name']
+        # description = mall_description
+        description = request.POST['description']
+        
+        category_1 = request.POST['category_1']
+        category_2 = request.POST['category_2']
+        category_3 = request.POST['category_3']
+        category_4 = request.POST['category_4']
+        category_5 = request.POST['category_5']
+        category_6 = request.POST['category_6']
+        category_7 = request.POST['category_7']
+        # here gmail = link1 = request.POST['link3']
+        link1 = request.POST['link3']
+        # website_link
+        link2 = request.POST['link1']
+        # facebook_link
+        link3 = request.POST['link2']
+        # other link
+        link4 = request.POST['link4']
+        
+        showrooms_1 = request.POST['showrooms_1']
+        showrooms_2 = request.POST['showrooms_2']
+        showrooms_3 = request.POST['showrooms_3']
+        showrooms_4 = request.POST['showrooms_4']
+        showrooms_5 = request.POST['showrooms_5']
+        showrooms_6 = request.POST['showrooms_6']
+        showrooms_7 = request.POST['showrooms_7']
+        showrooms_8 = request.POST['showrooms_8']
+        showrooms_9 = request.POST['showrooms_9']
+        showrooms_10 = request.POST['showrooms_10']
+        showrooms_11 = request.POST['showrooms_11']
+        showrooms_12 = request.POST['showrooms_12']
+        showrooms_13 = request.POST['showrooms_13']
+        showrooms_14 = request.POST['showrooms_14']
+        showrooms_15 = request.POST['showrooms_15']
+        showrooms_16 = request.POST['showrooms_16']
+        showrooms_17 = request.POST['showrooms_17']
+        showrooms_18 = request.POST['showrooms_18']
+        showrooms_19 = request.POST['showrooms_19']
+        showrooms_phone_1 = request.POST['showrooms_phone_1']
+        showrooms_phone_2 = request.POST['showrooms_phone_2']
+        showrooms_phone_3 = request.POST['showrooms_phone_3']
+        showrooms_phone_4 = request.POST['showrooms_phone_4']
+        showrooms_phone_5 = request.POST['showrooms_phone_5']
+        showrooms_phone_6 = request.POST['showrooms_phone_6']
+        showrooms_phone_7 = request.POST['showrooms_phone_7']
+        showrooms_phone_8 = request.POST['showrooms_phone_8']
+        showrooms_phone_9 = request.POST['showrooms_phone_9']
+        showrooms_phone_10 = request.POST['showrooms_phone_10']
+        showrooms_phone_11 = request.POST['showrooms_phone_11']
+        showrooms_phone_12 = request.POST['showrooms_phone_12']
+        showrooms_phone_13 = request.POST['showrooms_phone_13']
+        showrooms_phone_14 = request.POST['showrooms_phone_14']
+        showrooms_phone_15 = request.POST['showrooms_phone_15']
+        showrooms_phone_16 = request.POST['showrooms_phone_16']
+        showrooms_phone_17 = request.POST['showrooms_phone_17']
+        showrooms_phone_18 = request.POST['showrooms_phone_18']
+        showrooms_phone_19 = request.POST['showrooms_phone_19']
+
+        image_0 = request.POST['image_0']
+        image_1 = request.POST['image_1']
+        image_2 = request.POST['image_2']
+        image_3 = request.POST['image_3']
+        image_4 = request.POST['image_4']
+        newbrand = Brands.objects.create(brand_name=brand_name, description=description, category_1=category_1, category_2=category_2, category_3=category_3, category_4=category_4, category_5=category_5, category_6=category_6, category_7=category_7, gmail_link=link1, website_link=link2, facebook_link=link3, other_link=link4, showrooms_1=showrooms_1, showrooms_2=showrooms_2, showrooms_3=showrooms_3, showrooms_4=showrooms_4, showrooms_5=showrooms_5, showrooms_6=showrooms_6, showrooms_7=showrooms_7, showrooms_8=showrooms_8, showrooms_9=showrooms_9, showrooms_10=showrooms_10, showrooms_11=showrooms_11, showrooms_12=showrooms_12, showrooms_13=showrooms_13, showrooms_14=showrooms_14, showrooms_15=showrooms_15, showrooms_16=showrooms_16, showrooms_17=showrooms_17, showrooms_18=showrooms_18, showrooms_19=showrooms_19, showrooms_phone_1=showrooms_phone_1, showrooms_phone_2=showrooms_phone_2, showrooms_phone_3=showrooms_phone_3, showrooms_phone_4=showrooms_phone_4, showrooms_phone_5=showrooms_phone_5, showrooms_phone_6=showrooms_phone_6, showrooms_phone_7=showrooms_phone_7, showrooms_phone_8=showrooms_phone_8, showrooms_phone_9=showrooms_phone_9, showrooms_phone_10=showrooms_phone_10, showrooms_phone_11=showrooms_phone_11, showrooms_phone_12=showrooms_phone_12, showrooms_phone_13=showrooms_phone_13, showrooms_phone_14=showrooms_phone_14, showrooms_phone_15=showrooms_phone_15, showrooms_phone_16=showrooms_phone_16, showrooms_phone_17=showrooms_phone_17, showrooms_phone_18=showrooms_phone_18, showrooms_phone_19=showrooms_phone_19, image_0=image_0, image_1=image_1, image_2=image_2, image_3=image_3, image_4=image_4)
+        newbrand.save();
+        messages.info(request,'Brand Successfully Added')
+        return render(request,'add_brands.html')
+    else:
+        messages.info(request,'Add correct data!!!')
+        return render(request,'add_brands.html')

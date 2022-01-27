@@ -57,6 +57,10 @@
         height: 100px;
     }
     
+    #description {
+        height: 100px;
+    }
+    
     .half1 {
         display: flex;
         float: left;
@@ -69,6 +73,12 @@
     }
     
     h1 {
+        text-align: center;
+        width: 100%;
+    }
+    
+    h3 {
+        color: green;
         text-align: center;
         width: 100%;
     }
@@ -272,14 +282,6 @@
             <input class="half2" type="tel" id="showrooms_phone_19" name="showrooms_phone_19" placeholder="19. Phone :">
         </div>
         <br>
-        <div class="half">
-            <label class="half2" for="showrooms_20">
-                <input type="text" id="showrooms_20" name="showrooms_20" placeholder="20. Mall name, Full address.">
-            </label>
-            <input class="half2" type="tel" id="showrooms_phone_20" name="showrooms_phone_20 " placeholder="20. Phone :">
-        </div>
-        <br>
-
     </div>
 
 
@@ -309,7 +311,7 @@
     <!-- description -->
     <div>
         <p>Brand description:</p>
-        <input type="text" name="mall_description" id="mall_description" placeholder="Mall Description" required/>
+        <input type="text" name="description" id="description" placeholder="Brand Description" required/>
     </div>
 
     <br>
