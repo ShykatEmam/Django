@@ -55,8 +55,12 @@
                     <li><a class="nav-link scrollto" href="#services">services</a></li> {% endcomment %}
                     <li><a class="nav-link scrollto o" href="#malls">Shopping Malls</a></li>
                     <li><a class="nav-link scrollto" href="#brands">Brands</a></li>
-                    <li><a class="nav-link scrollto" href="add_malls">Add malls</a></li>
-                    <li><a class="nav-link scrollto" href="add_brands">Add brands</a></li>
+                    {% if user.is_staff %}
+                        <li><a class="nav-link scrollto" href="add_malls">Add malls</a></li>
+                        <li><a class="nav-link scrollto" href="add_brands">Add brands</a></li>
+                        
+                    {% endif %}
+                   
                     {% comment %}
                     <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li> {% endcomment %} {% comment %}
                     <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -109,17 +113,12 @@
             </div>
 
             <div class="row icon-boxes">
-                {% for feature in features %}
+                {% for mall in mall_lists %}
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
                     <div class="icon-box">
                         <div class="icon"><i class="ri-stack-line"></i></div>
-                        <h4 class="title"><a href="">{{feature.name}}</a></h4>
-                        <p class="description">{{feature.details}}</p>
-                        {% if feature.is_t %}
-                        <p>This Feature is True</p>
-                        {% else %}
-                        <p>This Feature is False</p>
-                        {% endif %}
+                        <h4 class="title"><a href="">{{mall.shopping_mall_name}}</a></h4>
+                        <p class="description">{{mall.description}}</p>
                     </div>
                 </div>
                 {% endfor %}
@@ -378,16 +377,21 @@
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
+                            <li data-filter=".filter-dhaka">Dhaka</li>
+                            <li data-filter=".filter-barisal">Barisal</li>
+                            <li data-filter=".filter-chittagong">chittagong</li>
+                            <li data-filter=".filter-khulna">Khulna</li>
+                            <li data-filter=".filter-mymensingh">Mymensingh</li>
+                            <li data-filter=".filter-rajshahi">Rajshahi</li>
+                            <li data-filter=".filter-sylhet">Sylhet</li>
+                            <li data-filter=".filter-rangpur">Rangpur</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="300">
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-barisal">
                         <div class="portfolio-wrap">
                             <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -401,7 +405,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-rajshahi">
                         <div class="portfolio-wrap">
                             <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -415,7 +419,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-khulna">
                         <div class="portfolio-wrap">
                             <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -429,7 +433,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-dhaka">
                         <div class="portfolio-wrap">
                             <img src="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -443,7 +447,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-khulna">
                         <div class="portfolio-wrap">
                             <img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -457,7 +461,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-barisal">
                         <div class="portfolio-wrap">
                             <img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -471,7 +475,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-khulna">
                         <div class="portfolio-wrap">
                             <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -485,7 +489,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-barisal">
                         <div class="portfolio-wrap">
                             <img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -499,7 +503,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-dhaka">
                         <div class="portfolio-wrap">
                             <img src="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="">
                             <div class="portfolio-info">
@@ -530,77 +534,32 @@
 
                 <div class="row">
 
+                    {% for mall in mall_lists%}
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="member">
                             <div class="member-img">
-                                <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Chief Executive Officer</span>
-                            </div>
-                        </div>
-                    </div>
+                                {% if mall.image_0 %}
+                                    
+                                    <img src="{{mall.image_0.url}}" class="img-fluid" alt="">
+                                
+                                {% else %}
+                                    <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                        <div class="member">
-                            <div class="member-img">
-                                <img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid" alt="">
+                                {% endif %}
                                 <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                    <a href="{{mall.gmail_link}}"><i class="bi bi-gmail"></i></a>
+                                    <a href="{{mall.facebook_link}}"><i class="bi bi-facebook"></i></a>>
+                                    <a href="{{mall.website_link}}"><i class="bi bi-website"></i></a>
+                                    <a href="{{mall.other_link}}"><i class="bi bi-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
+                                <h4>{{mall.shopping_mall_name}}</h4>
+                                <span>{{mall.division}}</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                        <div class="member">
-                            <div class="member-img">
-                                <img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-                        <div class="member">
-                            <div class="member-img">
-                                <img src="{% static 'assets/img/team/team-4.jpg' %}" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Amanda Jepson</h4>
-                                <span>Accountant</span>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
 
                 </div>
 

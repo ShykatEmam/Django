@@ -3,31 +3,7 @@ from django.db import models
 from django.db.models import Model
 
 # Create your models here.
-class Test(models.Model):
-  #owner
-    title_new = models.CharField(max_length=200)
-    description = models.TextField(null=False)
-    division = models.CharField(max_length=200)
-    address = models.TextField(null=False)
-    
-    category_1 = models.CharField(max_length=200)
-    category_2 = models.CharField(max_length=200)
-    category_3 = models.CharField(max_length=200)
-    category_4 = models.CharField(max_length=200)
-    category_5 = models.CharField(max_length=200)
-    category_6 = models.CharField(max_length=200)
-    category_7 = models.CharField(max_length=200)
-    # featured_image
-    website_link = models.CharField(max_length=1000)
-    facebook_link = models.CharField(max_length=1000)
-    other_link = models.CharField(max_length=1000)
-    
-    division = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='uploads/')
-    vote_total = models.IntegerField(default=0)
-    vote_ratio = models.IntegerField(default=0)
-    created = models.DateTimeField(auto_now_add=True)
-    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
 class Feature(models.Model):
     name: models.CharField(max_length=100)
     details: models.CharField(max_length=500)
@@ -35,7 +11,7 @@ class Feature(models.Model):
         return self.name
 class ShoppingMalls(models.Model):
    #owner
-    title = models.CharField(max_length=200)
+    shopping_mall_name = models.CharField(max_length=200)
     description = models.TextField(null=False)
     address = models.TextField(null=False)
     
@@ -86,25 +62,89 @@ class ShoppingMalls(models.Model):
     floors_10 = models.CharField(max_length=200,null=True,blank=True)
     floors_11 = models.CharField(max_length=200,null=True,blank=True)
     floors_12 = models.CharField(max_length=200,null=True,blank=True)
-    
-    
-    
-    
-    
+
     division = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='uploads/',null=True)
+    image_0 = models.ImageField(upload_to='static/assets/img/malls/',null=True)
+    image_1 = models.ImageField(upload_to='static/assets/img/malls/',null=True)
+    image_2 = models.ImageField(upload_to='static/assets/img/malls/',null=True)
+    image_3 = models.ImageField(upload_to='static/assets/img/malls/',null=True)
+    image_4 = models.ImageField(upload_to='static/assets/img/malls/',null=True)
 
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    def __str__(self):
+        return self.shopping_mall_name
 
-class Product(models.Model):
-    #owner
-    title = models.CharField(max_length=200)
+
+class Brands(models.Model):
+       #owner
+    brand_name = models.CharField(max_length=200)
     description = models.TextField(null=False)
+    
+    category_1 = models.CharField(max_length=200,null=True,blank=True)
+    category_2 = models.CharField(max_length=200,null=True,blank=True)
+    category_3 = models.CharField(max_length=200,null=True,blank=True)
+    category_4 = models.CharField(max_length=200,null=True,blank=True)
+    category_5 = models.CharField(max_length=200,null=True,blank=True)
+    category_6 = models.CharField(max_length=200,null=True,blank=True)
+    category_7 = models.CharField(max_length=200,null=True,blank=True)
     # featured_image
-    demo_link = models.CharField(max_length=1000)
-    source_link = models.CharField(max_length=1000)
-    vote_total = models.IntegerField(default=0)
-    vote_ratio = models.IntegerField(default=0)
+    
+    gmail_link = models.CharField(max_length=1000,null=True,blank=True)
+    website_link = models.CharField(max_length=1000,null=True,blank=True)
+    facebook_link = models.CharField(max_length=1000,null=True,blank=True)
+    other_link = models.CharField(max_length=1000,null=True,blank=True)
+    
+
+    showrooms_1 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_1 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_2 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_2 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_3 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_3 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_4 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_4 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_5 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_5 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_6 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_6 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_7 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_7 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_8 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_8 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_9 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_9 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_10 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_10 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_11 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_11 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_12 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_12 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_13 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_13 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_14 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_14 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_15 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_15 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_16 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_16 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_17 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_17 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_18 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_18 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_19 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_19 = models.CharField(max_length=50,null=True,blank=True)
+    showrooms_20 = models.CharField(max_length=200,null=True,blank=True)
+    showrooms_phone_20 = models.CharField(max_length=50,null=True,blank=True)
+
+    image_0 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
+    image_1 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
+    image_2 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
+    image_3 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
+    image_4 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
+
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    
+    def __str__(self):
+        return self.brand_name
