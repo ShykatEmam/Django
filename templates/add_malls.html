@@ -9,7 +9,7 @@
 
         <h1>Add Mall details here to add in Database</h1>
 
-        <form action="add_malls" method="POST" style="margin-left: 5%;">
+        <form action="add_malls" method="POST" style="margin-left: 5%;" enctype="multipart/form-data">
             {% csrf_token %}
             <!-- name d-->
             <div>
@@ -108,9 +108,9 @@
             <br>
             <!-- images d-->
             <div>
-                <p>Images :</p>
+                <p>Images :(note: add images agian from django admin please or image won't show up in websit)</p>
                 <h4>Image 1:</h4>
-                <input type="file" name="image_0" accept="image/*" required>
+                <input type="file" name="image_0" accept="image/*" upload="uploads/" required>
                 <br>
                 <h4>Image 2:</h4>
                 <input type="file" name="image_1" accept="image/*">

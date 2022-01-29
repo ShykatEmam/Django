@@ -64,11 +64,11 @@ class ShoppingMalls(models.Model):
     floors_12 = models.CharField(max_length=200,null=True,blank=True)
 
     division = models.CharField(max_length=200)
-    image_0 = models.ImageField(upload_to='static/assets/img/malls/',null=True)
-    image_1 = models.ImageField(upload_to='static/assets/img/malls/',null=True)
-    image_2 = models.ImageField(upload_to='static/assets/img/malls/',null=True)
-    image_3 = models.ImageField(upload_to='static/assets/img/malls/',null=True)
-    image_4 = models.ImageField(upload_to='static/assets/img/malls/',null=True)
+    image_0 = models.ImageField(upload_to='uploads/',null=True)
+    image_1 = models.ImageField(upload_to='uploads/',null=True,blank=True)
+    image_2 = models.ImageField(upload_to='uploads/',null=True,blank=True)
+    image_3 = models.ImageField(upload_to='uploads/',null=True,blank=True)
+    image_4 = models.ImageField(upload_to='uploads/',null=True,blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
@@ -135,11 +135,11 @@ class Brands(models.Model):
     showrooms_19 = models.CharField(max_length=200,null=True,blank=True)
     showrooms_phone_19 = models.CharField(max_length=50,null=True,blank=True)
 
-    image_0 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
-    image_1 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
-    image_2 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
-    image_3 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
-    image_4 = models.ImageField(upload_to='static/assets/img/brands/',null=True)
+    image_0 = models.ImageField(upload_to='uploads/',null=True)
+    image_1 = models.ImageField(upload_to='uploads/',null=True,blank=True)
+    image_2 = models.ImageField(upload_to='uploads/',null=True,blank=True)
+    image_3 = models.ImageField(upload_to='uploads/',null=True,blank=True)
+    image_4 = models.ImageField(upload_to='uploads/',null=True,blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)

@@ -18,7 +18,8 @@ from .models import ShoppingMalls
 
 def index(request):
     mall_list = ShoppingMalls.objects.all()
-    return render(request,'index.html',{'mall_lists':mall_list})
+    brand_list = Brands.objects.all()
+    return render(request,'index.html',{'mall_lists':mall_list,'brands':brand_list})
 
 def register(request):
     if request.method == 'POST':

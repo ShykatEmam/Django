@@ -301,7 +301,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2><a href="brnads">Brands</a></h2>
+                    <h2><a href="#">Brands</a></h2>
                     <p>Magnam dolores </p>
                 </div>
 
@@ -309,147 +309,144 @@
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-dhaka">Dhaka</li>
-                            <li data-filter=".filter-barisal">Barisal</li>
-                            <li data-filter=".filter-chittagong">chittagong</li>
-                            <li data-filter=".filter-khulna">Khulna</li>
-                            <li data-filter=".filter-mymensingh">Mymensingh</li>
-                            <li data-filter=".filter-rajshahi">Rajshahi</li>
-                            <li data-filter=".filter-sylhet">Sylhet</li>
-                            <li data-filter=".filter-rangpur">Rangpur</li>
+                            <li data-filter=".filter-category_1">TV & Home Appliances</li>
+                            <li data-filter=".filter-category_2">Electronic Devices</li>
+                            <li data-filter=".filter-category_3">Clothes & Fashion</li>
+                            <li data-filter=".filter-category_4">Home & Lifestyle</li>
+                            <li data-filter=".filter-category_5">Health & Beauty</li>
+                            <li data-filter=".filter-category_6">Accessories</li>
+                            <li data-filter=".filter-category_7">Others</li>
                         </ul>
                     </div>
                 </div>
 
+                
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="300">
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-barisal">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                    
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-category_1">
+                        {% for brand in brands%}
+                            {% if brand.category_1%}
+                                <div class="portfolio-wrap">
+                                    <img src="{{brand.image_0.url}}" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>{{brand.brand_name}}</h4>
+                                        <p>App</p>
+                                        <div class="portfolio-links">
+                                            <a href="{{brand.image_0.url}}" class=""data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                            <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-category_2">
+                        {% for brand in brands%}
+                            {% if brand.category_2%}
+                                <div class="portfolio-wrap">
+                                    <img src="{{brand.image_0.url}}" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>{{brand.brand_name}}</h4>
+                                        <p>App</p>
+                                        <div class="portfolio-links">
+                                            <a href="{{brand.image_0.url}}" class=""data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                            <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-category_3">
+                        {% for brand in brands%}
+                            {% if brand.category_3%}
+                                <div class="portfolio-wrap">
+                                    <img src="{{brand.image_0.url}}" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>{{brand.brand_name}}</h4>
+                                        <p>App</p>
+                                        <div class="portfolio-links">
+                                            <a href="{{brand.image_0.url}}" class=""data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                            <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-category_4">
+                        {% for brand in brands%}
+                            {% if brand.category_4%}
+                                <div class="portfolio-wrap">
+                                    <img src="{{brand.image_0.url}}" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>{{brand.brand_name}}</h4>
+                                        <p>App</p>
+                                        <div class="portfolio-links">
+                                            <a href="{{brand.image_0.url}}" class=""data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                            <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-category_5">
+                        {% for brand in brands%}
+                            {% if brand.category_5%}
+                                <div class="portfolio-wrap">
+                                    <img src="{{brand.image_0.url}}" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>{{brand.brand_name}}</h4>
+                                        <p>App</p>
+                                        <div class="portfolio-links">
+                                            <a href="{{brand.image_0.url}}" class=""data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                            <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-category_6">
+                        {% for brand in brands%}
+                            {% if brand.category_6%}
+                                <div class="portfolio-wrap">
+                                    <img src="{{brand.image_0.url}}" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>{{brand.brand_name}}</h4>
+                                        <p>App</p>
+                                        <div class="portfolio-links">
+                                            <a href="{{brand.image_0.url}}" class=""data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                            <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-category_7">
+                        {% for brand in brands%}
+                            {% if brand.category_7%}
+                                <div class="portfolio-wrap">
+                                    <img src="{{brand.image_0.url}}" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>{{brand.brand_name}}</h4>
+                                        <p>App</p>
+                                        <div class="portfolio-links">
+                                            <a href="{{brand.image_0.url}}" class=""data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                            <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-rajshahi">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-khulna">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-dhaka">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 2</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-khulna">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 2</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-barisal">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-khulna">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 1</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-barisal">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 3</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-dhaka">
-                        <div class="portfolio-wrap">
-                            <img src="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
+                
 
             </div>
         </section>
@@ -466,7 +463,7 @@
 
                 <div class="row">
 
-                    {% for mall in mall_lists%}
+                    {% for mall in mall_lists %}
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="member">
                             <div class="member-img">
@@ -494,10 +491,10 @@
                     {% endfor %}
 
                 </div>
-
             </div>
         </section>
         <!-- End Team Section -->
+
 
         <!-- ======= Pricing Section ======= -->
         {% comment %}
