@@ -5,39 +5,41 @@
 {% include 'header.html' %}
 <!-- End Header -->
 
+
 <style>
     h5 {
         color: red;
     }
 </style>
 <body>
-        
-    <h1>Sign Up Below</h1>
+    <section class="middle">
+        <h1>Sign Up Below</h1>
 
-    {% for message in messages %}
-    <h5>{{message}}</h5>
-    {% endfor %}
-
-
-
-    <form action="register" method="POST">
-        {% csrf_token %}
-        <p>Username:</p>
-        <input type="text" name="username">
-        <p>Email:</p>
-        <input type="email" name="email">
-        <p>Password:</p>
-        <input type="password" name="password">
-        <p>Repeat Password:</p>
-        <input type="password" name="password2">
-        <br>
-        <br>
-        <br>
-        <input type="submit">
-    </form>
+        {% for message in messages %}
+        <h5>{{message}}</h5>
+        {% endfor %}
 
 
 
-    <br><br>
+        <form action="register" method="POST">
+            {% csrf_token %}
+            <p>Username:</p>
+            <input type="text" name="username">
+            <p>Email:</p>
+            <input type="email" name="email">
+            <p>Password:</p>
+            <input type="password" name="password">
+            <p>Repeat Password:</p>
+            <input type="password" name="password2">
+            <br>
+            <br>
+            <br>
+            <input type="submit">
+        </form>
+
+
+
+        <br><br>
+    </section>
     {% include "footer.html" %}
 </body>
