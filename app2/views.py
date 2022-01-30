@@ -4,6 +4,9 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Brands, Feature
 from .models import ShoppingMalls
+
+# for pagination 
+from django.core.paginator import Paginator
 # Create your views here.
 # def index(request):
 #     feature1 = Feature()
@@ -17,8 +20,8 @@ from .models import ShoppingMalls
 #     return render(request,'index.html',{'features':features})
 
 def index(request):
-    mall_list = ShoppingMalls.objects.all()
-    brand_list = Brands.objects.all()
+    mall_list = ShoppingMalls.objects.all().order_by('?')
+    brand_list = Brands.objects.all().order_by('?')
     return render(request,'index.html',{'mall_lists':mall_list,'brands':brand_list})
 
 def register(request):
@@ -67,7 +70,6 @@ def counter(request):
 
 def post(request,pk):
     return render(request,'post.html',{'pk': pk})
-
 
 
 def add_malls(request):
@@ -143,23 +145,17 @@ def add_malls(request):
         messages.info(request,'Add correct data!!!')
         return render(request,'add_malls.html')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-def shops(request):
-    return render(request,'shops.html')
+def malls(request):
+    page_name = "Shopping Malls"
+    return render(request,'malls.html',{'site_name': page_name})
 def brands(request):
-    return render(request,'brand.html')
+    brand_name = "Brands"
+    brand_list = Brands.objects.all()
+    p = Paginator(Brands.objects.all(),5)
+    page = request.GET.get('page')
+    brand_paginators = p.get_page(page)
+    return render(request,'brands.html',{'site_name': brand_name,'brands':brand_list,'brand_paginators':brand_paginators})
+
 def about(request):
     return render(request,'about.html')
 def brand_details(request):

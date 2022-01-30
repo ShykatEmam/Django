@@ -64,7 +64,7 @@ class ShoppingMalls(models.Model):
     floors_12 = models.CharField(max_length=200,null=True,blank=True)
 
     division = models.CharField(max_length=200)
-    image_0 = models.ImageField(upload_to='uploads/',null=True)
+    image_0 = models.ImageField(upload_to='uploads/',null=True,blank=True)
     image_1 = models.ImageField(upload_to='uploads/',null=True,blank=True)
     image_2 = models.ImageField(upload_to='uploads/',null=True,blank=True)
     image_3 = models.ImageField(upload_to='uploads/',null=True,blank=True)
@@ -74,7 +74,6 @@ class ShoppingMalls(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     def __str__(self):
         return self.shopping_mall_name
-
 
 class Brands(models.Model):
        #owner

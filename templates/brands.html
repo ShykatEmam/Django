@@ -1,0 +1,92 @@
+{% load static %} {% include "link.html" %} {% include 'header.html' %}
+<!-- End Header -->
+<style>
+    body {
+        background-color: rgb(184, 194, 230);
+    }
+</style>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="row" style="border: 1px solid rgba(0, 0, 0, 0.267); margin: 5px; text-align: center;">
+                <h3>Advertisement section</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-6" style="border: 1px solid black; height:fit-content;">
+                    <h3>category</h3>
+                    <p>
+                        A108 Adam Street <br> New York, NY 535022<br> United States <br><br>
+                        <strong>Phone:</strong> +1 5589 55488 55<br>
+                        <strong>Email:</strong> info@example.com<br>
+                    </p>
+                </div>
+
+                <div class="col-lg-7 col-md-6">
+                    <div style="border: 1px solid rgba(0, 0, 0, 0.267); margin: 5px; text-align: center;">
+                        <h4>Advertisement/Banner section</h4>
+                    </div>
+                    <h4 style="text-align: center;">Brands</h4>
+                    <div class="row" style="background-color:white;">
+                        {% for brand in brand_paginators %}
+                        <div class="col-lg-3 " style="border: 1px solid rgba(0, 0, 0, 0.267); margin-bottom: 1%; text-align: center; margin-top: 1%; margin-right: 1%; margin-left: 1%; width:31%; background-color:white;">
+
+                            <img src="{{brand.image_0.url}}" class="img-fluid" alt="">
+                            <h3 style="border: 1px solid rgba(0, 0, 0, 0.267);">{{brand.brand_name}}</h3>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div style="text-align: center;">
+                        <!-- {{brand_paginators}}
+                        <br> Has previous: {{brand_paginators.has_previous}}
+                        <br> has next: {{brand_paginators.has_next}}
+                        <br> current: {{brand_paginators.number}}
+                        <br> number of pages: {{brand_paginators.paginator.num_pages}}
+                        <hr>
+                        <br>
+                        <br/>  -->
+                        {% if brand_paginators.has_previous %}
+                        <a href="?page=1">&laquo;First</a>
+                        <a href="?page={{brand_paginators.previous_page_number }}">Previous</a> {% endif %} page {{brand_paginators.number}} of {{brand_paginators.num_pages}} {% if brand_paginators.has_next%}
+                        <a href="?page={{brand_paginators.next_page_number}}">next</a>
+                        <a href="?page={{brand_paginators.paginator.num_pages}}">Last &raquo;</a> {% endif %}
+
+                    </div>
+                    <div class="row" style="border: 1px solid rgba(0, 0, 0, 0.267); margin: 5px; text-align: center;">
+                        <h3>Advertisement section</h3>
+                    </div>
+
+                </div>
+
+                <div class=" col-lg-3 col-md-6 " style="border: 1px solid black;height:fit-content ">
+                    <div>
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Web Design</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Product Management</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Graphic Design</a></li>
+                        </ul>
+                    </div>
+                    <div style="border: 1px solid rgba(0, 0, 0, 0.267); margin-bottom: 10px; ">
+                        <h4>Advertisement section</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Web Design</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Product Management</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Graphic Design</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {% include "footer.html " %}
+
+
+</body>
