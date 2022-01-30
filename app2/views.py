@@ -150,25 +150,31 @@ def malls(request):
     return render(request,'malls.html',{'site_name': page_name})
 def brands(request):
     brand_name = "Brands"
-    brand_list = Brands.objects.all()
     p = Paginator(Brands.objects.all(),5)
     page = request.GET.get('page')
     brand_paginators = p.get_page(page)
-    return render(request,'brands.html',{'site_name': brand_name,'brands':brand_list,'brand_paginators':brand_paginators})
+    return render(request,'brands.html',{'site_name': brand_name,'brand_paginators':brand_paginators})
 
 def about(request):
     return render(request,'about.html')
+
 def brand_details(request):
-    return render(request,'brand_details.html')
+    
+    if  request.method == 'POST':
+        page_title = request.POST['brand_title']
+    pk = Brands.objects.all()
+    
+    return render(request,'brand_details.html',{'pk':pk,'page_title':page_title})
+
 def shop_details(request):
-    return render(request,'shop_details.html')
+    return render(request,'mall_details.html')
 
 def add_brands(request):
     if  request.method == 'POST':
         brand_name = request.POST['brand_name']
         # description = mall_description
         description = request.POST['description']
-        
+
         category_1 = request.POST['category_1']
         category_2 = request.POST['category_2']
         category_3 = request.POST['category_3']
@@ -184,7 +190,7 @@ def add_brands(request):
         link3 = request.POST['link2']
         # other link
         link4 = request.POST['link4']
-        
+
         showrooms_1 = request.POST['showrooms_1']
         showrooms_2 = request.POST['showrooms_2']
         showrooms_3 = request.POST['showrooms_3']
