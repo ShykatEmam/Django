@@ -4,6 +4,8 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Brands, Feature
 from .models import ShoppingMalls
+import random
+
 
 # for pagination 
 from django.core.paginator import Paginator
@@ -163,8 +165,9 @@ def brand_details(request):
     if  request.method == 'POST':
         page_title = request.POST['brand_title']
     pk = Brands.objects.all()
-    
-    return render(request,'brand_details.html',{'pk':pk,'page_title':page_title})
+    items = list(Brands.objects.all())
+    pks = random.sample(items,5)
+    return render(request,'brand_details.html',{'pk':pk,'page_title':page_title,'pks':pks})
 
 def shop_details(request):
     return render(request,'mall_details.html')
