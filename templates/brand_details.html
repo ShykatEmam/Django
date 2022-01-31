@@ -26,7 +26,7 @@
                 <h3>Advertisement section</h3>
             </div>
             {% for pk in pk %} {% if pk.brand_name == page_title %}
-            <div class="row">
+            <div class="row" style="margin: 2px;">
                 <div class="col-lg-4 col-md-6" style="border: 1px solid black; height:fit-content;">
                     <img src="{{pk.image_0.url}}" class="img-fluid" alt="">
                 </div>
@@ -64,7 +64,7 @@
                         <a><i class="bi bi-linkedin"></i></a> {%endif %}
                     </div>
                 </div>
-                <div class=" col-lg-3 col-md-6 " style="border: 1px solid black;height:fit-content ">
+                <div class=" col-lg-3 col-md-6 " style="border: 1px solid black;height:fit-content;">
                     <div>
                         <h4>Related Shops: </h4>
                         <ul>
@@ -88,7 +88,7 @@
             </div>
             {% for pk in pk %}
                 {% if pk.brand_name == page_title %}
-                <div class="row">
+                <div class="row"  style="margin: 1px;">
                     <div class="col-lg-9 col-md-6">
                         <div class="row desc">
                             <h4>{{pk.brand_name}} History:</h4>
@@ -250,7 +250,7 @@
 
                 {% endif %}
             {% endfor %}
-            <div class="row">
+            <div class="row"  style="margin: 1px;">
                 <h2>Other brands:</h2>
                 {% for pks in pks %}
                     <div class="col-lg-2 col-md-6" style="border: 1px solid black; margin:5px; height:fit-content;">
