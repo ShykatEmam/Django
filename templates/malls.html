@@ -1,20 +1,169 @@
 {% load static %} {% include "link.html" %} {% include 'header.html' %}
 <!-- End Header -->
-
+<style>
+    body {
+        background-color: rgb(184, 194, 230);
+    }
+    
+    .more_details:hover{
+        
+        color:rgb(4, 82, 248); 
+        font-size:  16px;
+    }
+    .more_details{
+        color:rgb(53, 140, 240); 
+        font-size:  14px;
+    }
+    .more_details1:hover{
+        
+        color:rgb(44, 111, 255); 
+        font-size:  22px;
+    }
+    .more_details1{
+        color:rgb(0, 0, 0); 
+        font-size:  20px;
+        font-weight: bold;
+    }
+</style>
 
 <body>
 
     <section>
-        <section>
-            left sidebar
-        </section>
-        <section>
-            Middle section
-        </section>
-        <section>
-            right sidebar
-        </section>
-        <br><br>
+        <div class="container">
+            <div class="row" style="border: 1px solid rgba(0, 0, 0, 0.267); margin: 5px; text-align: center;">
+                <h3>Advertisement section</h3>
+            </div>
+            <div class="row" style="margin: 1px;">
+                <div class="col-lg-2 col-md-6" style="border: 1px solid black; height:fit-content; position:sticky;">
+                    <h3>category</h3>
+                    <p>
+                        A108 Adam Street <br> New York, NY 535022<br> United States <br><br>
+                        <strong>Phone:</strong> +1 5589 55488 55<br>
+                        <strong>Email:</strong> info@example.com<br>
+                    </p>
+                </div>
+
+                <div class="col-lg-7 col-md-6" style="background-color:#C0C0C0; padding: 1%; border: 1px solid rgba(0, 0, 0, 0.267);">
+                    <div class="row" style="height:fit-content; margin-bottom:10px;">
+                        <img src="/static/assets/img/brand_banner.jpg" alt="" style="height:150px;">
+
+                    </div>
+
+                    {% for mall in mall_paginators %}
+                    <div class="row" style="background-color:white; border: 1px solid rgba(0, 0, 0, 0.267); margin:1px; border-radius: 25px;">
+                        <div class="col-lg-5 " style=" background-color:gray;">
+
+                            <img src="{{mall.image_0.url}}" class="img-fluid" alt="" style="padding: 2%;">
+
+                        </div>
+                        <div class="col-lg-7 " style="background-color:white;">
+                            
+                            <div class="row">
+                                <form action="shop_details" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" style="border: none; background-color: transparent;" name="brand_title" value="{{mall.shopping_mall_name}}">
+                                        <h6 class="more_details1">{{mall.shopping_mall_name}}</h6>
+                                    </button>
+                                </form>
+                            </div>
+
+                            
+                            <div class="row">
+                                <h6>
+                                    ({{mall.division}})
+                                </h6>
+                            </div>
+                            <div class="row" style="width:250px;">
+                                <p>
+                                    {{mall.address}}
+                                </p>
+                            </div>
+                            <h5><u>Contact:</u></h5>
+                            <div class="row" style="margin-left:5%;">
+                                
+                                    <p >
+                                        <ul>
+                                            {% if mall.phone_1 %}
+                                            <li>{{mall.phone_1}}</li>
+                                            {%endif %} {% if mall.phone_2 %}
+                                            <li>{{mall.phone_2}}</li>
+                                            {%endif %} {% if mall.phone_3 %}
+                                            <li>{{mall.phone_3}}</li>
+                                            {%endif %} {% if mall.phone_4 %}
+                                            <li>{{mall.phone_4}}</li>
+                                            {%endif %}
+                                        </ul>
+                                    </p>
+
+                                
+                                
+                            </div>
+                            <form action="shop_details" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" style="border: none; background-color: transparent;" name="brand_title" value="{{mall.shopping_mall_name}}">
+                                    <h6 class="more_details">More details....</h6>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div style="text-align: center;border: 1px solid rgba(0, 0, 0, 0.267); margin-top: 5px; margin-bottom: 5px; padding-top: 5px; padding-bottom: 5px;color: white; background-color: rgb(192, 191, 191);">
+
+                        <br> Has previous: {{mall_paginators.has_previous}}
+                        <br> has next: {{mall_paginators.has_next}}
+                        <br> current: {{mall_paginators.number}}
+                        <br> number of pages: {{mall_paginators.paginator.num_pages}}
+                        <hr>
+                        <br>
+                        <br/>
+                        {% if mall_paginators.has_previous %}
+                        <a href="?page=1">&laquo;First&emsp;</a>
+                        <a href="?page={{mall_paginators.previous_page_number }}">Previous&emsp;</a> 
+                        {% endif %} 
+                        page {{mall_paginators.number}} of {{mall_paginators.num_pages}} 
+                        {% if mall_paginators.has_next%}
+                        <a href="?page={{mall_paginators.next_page_number}}">&emsp;next</a>
+                        <a href="?page={{mall_paginators.paginator.num_pages}}">&emsp;Last &raquo;</a> 
+                        {% endif %}
+
+                    </div>
+                    
+
+                </div>
+
+                <div class=" col-lg-3 col-md-6 " style="border: 1px solid black;height:fit-content; ">
+                    <div>
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Web Design</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Product Management</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Graphic Design</a></li>
+                        </ul>
+                    </div>
+                    <div style="border: 1px solid rgba(0, 0, 0, 0.267); margin-bottom: 10px; ">
+                        <h4>Advertisement section</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Web Design</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Product Management</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Graphic Design</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
-    {% include "footer.html" %}
+    <div class="row" style="border: 1px solid rgba(0, 0, 0, 0.267); margin: 5px; text-align: center;">
+        <h3>Advertisement section</h3>
+    </div>
+
+    {% include "footer.html " %}
+
+
 </body>

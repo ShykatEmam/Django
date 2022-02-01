@@ -149,7 +149,11 @@ def add_malls(request):
 
 def malls(request):
     page_name = "Shopping Malls"
-    return render(request,'malls.html',{'site_name': page_name})
+    p = Paginator(ShoppingMalls.objects.all(),5)
+    page = request.GET.get('page')
+    mall_paginators = p.get_page(page)
+    return render(request,'malls.html',{'site_name': page_name,'mall_paginators':mall_paginators})
+
 def brands(request):
     brand_name = "Brands"
     p = Paginator(Brands.objects.all(),5)

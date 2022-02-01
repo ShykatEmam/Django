@@ -4,6 +4,16 @@
     body {
         background-color: rgb(184, 194, 230);
     }
+    
+    .more_details:hover{
+        
+        color:rgb(44, 111, 255); 
+        font-size:  22px;
+    }
+    .more_details{
+        color:rgb(0, 0, 0); 
+        font-size:  20px;
+    }
 </style>
 
 <body>
@@ -33,17 +43,19 @@
                         {% for brand in brand_paginators %}
                         <div class="col-lg-3 " style="border: 1px solid rgba(0, 0, 0, 0.267); margin-bottom: 1%; text-align: center; margin-top: 1%; margin-right: 1%; margin-left: 1%; width:31%; background-color:white;">
 
-                            <img src="{{brand.image_0.url}}" class="img-fluid" alt="">
+                            <img src="{{brand.image_0.url}}" class="img-fluid" alt="" style="padding-top: 5%;">
                             <br>
                             <br>
                             <form action="brand_details" method="POST">
                                 {% csrf_token %}
-                                <input type="submit" value="{{brand.brand_name}}" name="brand_title" style="border: none;" />
+                                <button type="submit" style="border: none; background-color: transparent;" name="brand_title" value="{{brand.brand_name}}">
+                                    <h6 class="more_details">{{brand.brand_name}}</h6>
+                                </button>
                             </form>
                         </div>
                         {% endfor %}
                     </div>
-                    <div style="text-align: center;border: 1px solid rgba(0, 0, 0, 0.267); margin-top: 5px; margin-bottom: 5px; padding-top: 5px; padding-bottom: 5px;color: white; background-color: black;">
+                    <div style="text-align: center;border: 1px solid rgba(0, 0, 0, 0.267); margin-top: 5px; margin-bottom: 5px; padding-top: 5px; padding-bottom: 5px;color: white; background-color: rgb(192, 191, 191);">
                         <!-- {{brand_paginators}}
                         <br> Has previous: {{brand_paginators.has_previous}}
                         <br> has next: {{brand_paginators.has_next}}
@@ -53,15 +65,13 @@
                         <br>
                         <br/>  -->
                         {% if brand_paginators.has_previous %}
-                        <a href="?page=1">&laquo;First</a>
-                        <a href="?page={{brand_paginators.previous_page_number }}">Previous</a> {% endif %} page {{brand_paginators.number}} of {{brand_paginators.num_pages}} {% if brand_paginators.has_next%}
-                        <a href="?page={{brand_paginators.next_page_number}}">next</a>
-                        <a href="?page={{brand_paginators.paginator.num_pages}}">Last &raquo;</a> {% endif %}
+                        <a href="?page=1">&laquo;First&emsp;</a>
+                        <a href="?page={{brand_paginators.previous_page_number }}">Previous&emsp;</a> {% endif %} page {{brand_paginators.number}} of {{brand_paginators.num_pages}} {% if brand_paginators.has_next%}
+                        <a href="?page={{brand_paginators.next_page_number}}">&emsp;next</a>
+                        <a href="?page={{brand_paginators.paginator.num_pages}}">&emsp;Last &raquo;</a> {% endif %}
 
                     </div>
-                    <div class="row" style="border: 1px solid rgba(0, 0, 0, 0.267); margin: 5px; text-align: center;">
-                        <h3>Advertisement section</h3>
-                    </div>
+
 
                 </div>
 
@@ -91,6 +101,10 @@
             </div>
         </div>
     </section>
+
+    <div class="row" style="border: 1px solid rgba(0, 0, 0, 0.267); margin: 5px; text-align: center;">
+        <h3>Advertisement section</h3>
+    </div>
 
     {% include "footer.html " %}
 

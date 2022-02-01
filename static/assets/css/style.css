@@ -21,7 +21,7 @@ a {
 }
 
 a:hover {
-    color: #469fdf;
+    color: #0070c0;
     text-decoration: none;
 }
 
@@ -2053,7 +2053,7 @@ button:hover,
 button:focus,
 button:visited,
 button:active {
-    text-decoration: none;
+    text-decoration:wavy;
     outline: none;
 }
 
@@ -10320,3 +10320,8 @@ table.shop_attributes tbody {
     padding: 50px;
     font-size: 20px;
 }
+.category_tab{
+    border: 1px solid #bfbfbf;
+    margin:2px;
+  
+  }
