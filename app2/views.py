@@ -159,7 +159,9 @@ def brands(request):
     p = Paginator(Brands.objects.all(),5)
     page = request.GET.get('page')
     brand_paginators = p.get_page(page)
-    return render(request,'brands.html',{'site_name': brand_name,'brand_paginators':brand_paginators})
+    shops = list(ShoppingMalls.objects.all())
+    shops = random.sample(shops,5)
+    return render(request,'brands.html',{'site_name': brand_name,'brand_paginators':brand_paginators,'shops':shops})
 
 def about(request):
     return render(request,'about.html')
@@ -168,12 +170,30 @@ def brand_details(request):
     
     if  request.method == 'POST':
         page_title = request.POST['brand_title']
+
+
+
+
     pk = Brands.objects.all()
     items = list(Brands.objects.all())
     pks = random.sample(items,5)
-    return render(request,'brand_details.html',{'pk':pk,'page_title':page_title,'pks':pks})
+    pks2 = random.sample(items,6)
+
+    sp = ShoppingMalls.objects.all()
+    spitems = list(ShoppingMalls.objects.all())
+    sps = random.sample(spitems,5)
+    sps2 = random.sample(spitems,6)
+
+
+
+    return render(request,'brand_details.html',{'pk':pk,'page_title':page_title,'pks':pks,'sp':sp,'sps':sps,'sps2':sps2,'pks2':pks2})
 
 def shop_details(request):
+    if  request.method == 'POST':
+        page_title = request.POST['mall_title']
+    pk = Brands.objects.all()
+    items = list(Brands.objects.all())
+    pks = random.sample(items,5)
     return render(request,'mall_details.html')
 
 def add_brands(request):

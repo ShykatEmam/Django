@@ -34,7 +34,7 @@
                 <h3>Advertisement section</h3>
             </div>
             <div class="row" style="margin: 1px;">
-                <div class="col-lg-2 col-md-6" style="border: 1px solid black; height:fit-content; position:sticky;">
+                <div class="col-lg-2 col-md-10" style="border: 1px solid black; height:fit-content; position:sticky;">
                     <h3>category</h3>
                     <p>
                         A108 Adam Street <br> New York, NY 535022<br> United States <br><br>
@@ -43,7 +43,7 @@
                     </p>
                 </div>
 
-                <div class="col-lg-7 col-md-6" style="background-color:#C0C0C0; padding: 1%; border: 1px solid rgba(0, 0, 0, 0.267);">
+                <div class="col-lg-7 col-md-10" style="background-color:#C0C0C0; padding: 1%; border: 1px solid rgba(0, 0, 0, 0.267);">
                     <div class="row" style="height:fit-content; margin-bottom:10px;">
                         <img src="/static/assets/img/brand_banner.jpg" alt="" style="height:150px;">
 
@@ -59,7 +59,7 @@
                         <div class="col-lg-7 " style="background-color:white;">
                             
                             <div class="row">
-                                <form action="shop_details" method="POST">
+                                <form action="brand_details" method="POST">
                                     {% csrf_token %}
                                     <button type="submit" style="border: none; background-color: transparent;" name="brand_title" value="{{mall.shopping_mall_name}}">
                                         <h6 class="more_details1">{{mall.shopping_mall_name}}</h6>
@@ -100,7 +100,7 @@
                             </div>
                             <form action="shop_details" method="POST">
                                 {% csrf_token %}
-                                <button type="submit" style="border: none; background-color: transparent;" name="brand_title" value="{{mall.shopping_mall_name}}">
+                                <button type="submit" style="border: none; background-color: transparent;" name="mall_title" value="{{mall.shopping_mall_name}}">
                                     <h6 class="more_details">More details....</h6>
                                 </button>
                             </form>
@@ -133,7 +133,7 @@
 
                 </div>
 
-                <div class=" col-lg-3 col-md-6 " style="border: 1px solid black;height:fit-content; ">
+                <div class=" col-lg-3 col-md-10" style="border: 1px solid black;height:fit-content; ">
                     <div>
                         <h4>Our Services</h4>
                         <ul>
