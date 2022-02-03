@@ -2,7 +2,7 @@
 <!-- End Header -->
 <style>
     body {
-        background-color: rgb(184, 194, 230);
+        background-color: #87cfeb41;
     }
     
     table,
@@ -26,11 +26,11 @@
         <div class="container">
             
             {% for pk in pk %} {% if pk.brand_name == page_title %}
-            <div class="row" style="border: 1px solid rgba(0, 0, 0, 0.267); margin: 5px; text-align: center;">
+            <div class="row" style="border: 1px solid #DCDCDC; margin: 5px; text-align: center;">
                 <h3>Advertisement section</h3>
             </div>
             <div class="row" style="margin: 2px;">
-                <div class="col-lg-4 col-md-6" style="border: 1px solid black; height:fit-content;">
+                <div class="col-lg-4 col-md-6" style="height:fit-content;">
                     <img src="{{pk.image_0.url}}" class="img-fluid" alt="">
                 </div>
 
@@ -67,7 +67,7 @@
                         <a><i class="bi bi-linkedin"></i></a> {%endif %}
                     </div>
                 </div>
-                <div class=" col-lg-3 col-md-6 " style="border: 1px solid black;height:fit-content;">
+                <div class=" col-lg-3 col-md-6 " style="border: 1px solid #DCDCDC;height:fit-content;">
                     <div>
                         <h4>Shopping Malls:</h4>
                         {% for shops in sps2 %}
@@ -76,7 +76,7 @@
                                         {% csrf_token %}
                                         
                                         <h6 style="width:100%;display:inline-block; margin-top:5px;margin-bottom:-10px; color:blue;">
-                                            <input type="submit" value="{{shops.shopping_mall_name|truncatewords:3}}" name="brand_title" onMouseOver="this.style.color='#2E2EFF'"onMouseOut="this.style.color='#000'" style="border: none; background-color: transparent; color: black;" />
+                                            <input type="submit" value="{{shops.shopping_mall_name}}" name="brand_title" onMouseOver="this.style.color='#2E2EFF'"onMouseOut="this.style.color='#000'" style="border: none; background-color: transparent; color: black;" />
                                         </h6>
                                     </form>
                             </div>
@@ -93,12 +93,12 @@
             
             {% for pk in pk %}
                 {% if pk.brand_name == page_title %}
-                <div class="row" style="border: 1px solid black; margin: 2px;">
+                <div class="row" style="border: 1px solid #DCDCDC; margin: 2px;">
                     <h3 style="text-align:center;">Advertisement section</h3>
                 </div>
                 <div class="row"  style="margin: 1px;">
                     <div class="col-lg-9 col-md-6">
-                        <div class="row desc">
+                        <div class="row desc" style="margin: 1px;border: 1px solid #DCDCDC;">
                             <h4>{{pk.brand_name}} History:</h4>
                             <p>
                                 {{pk.description}}
@@ -239,7 +239,7 @@
                             Reviews
                         </div>
                     </div>
-                    <div class=" col-lg-3 col-md-6 " style="border: 1px solid black;height:fit-content ">
+                    <div class=" col-lg-3 col-md-6 " style="border: 1px solid #DCDCDC;height:fit-content ">
                         <div>
                             <h4>Other Brands:</h4>
                             {% for brands in pks2 %}
@@ -248,7 +248,7 @@
                                             {% csrf_token %}
                                             
                                             <h6 style="width:100%;display:inline-block; margin-top:5px;margin-bottom:-10px; color:blue;">
-                                                <input type="submit" value="{{brands.brand_name|truncatewords:2}}" name="brand_title" onMouseOver="this.style.color='#2E2EFF'"onMouseOut="this.style.color='#000'" style="border: none; background-color: transparent; color: black;" />
+                                                <input type="submit" value="{{brands.brand_name}}" name="brand_title" onMouseOver="this.style.color='#2E2EFF'"onMouseOut="this.style.color='#000'" style="border: none; background-color: transparent; color: black;" />
                                             </h6>
                                         </form>
                                 </div>
@@ -267,14 +267,14 @@
                     <div class="row"  style="margin: 1px;">
                         <h2>Other brands:</h2>
                         {% for pks in pks %}
-                            <div class="col-lg-2 col-md-3 col-sm-2" style="border: 1px solid black; margin:5px;">
+                            <div class="col-lg-2 col-md-3 col-sm-2" style="border: 1px solid #DCDCDC; margin:5px;">
                                 <form action="brand_details" method="POST">
                                     {% csrf_token %}
                                     <img type="submit" src="{{pks.image_0.url}}" class="img-fluid" name="brand_title" alt="" value="{{pks.brand_name}}" style="padding-top:5%;">
                                 </form><form action="brand_details" method="POST">
                                     {% csrf_token %}
                                     <h4 style="text-align:center; margin-top:5px;">
-                                    <input type="submit" value="{{pks.brand_name|truncatewords:2}}" name="brand_title" style="border: none; background-color: transparent;" />
+                                    <input type="submit" value="{{pks.brand_name}}" name="brand_title" style="border: none; background-color: transparent;" />
                                     </h4>
                                 </form>
                             </div>
@@ -295,7 +295,7 @@
                 <h3>Advertisement section</h3>
             </div>
             <div class="row" style="margin: 2px;">
-                <div class="col-lg-4 col-md-6" style="border: 1px solid black; height:fit-content;">
+                <div class="col-lg-4 col-md-6" style="height:fit-content;">
                     <img src="{{sp.image_0.url}}" class="img-fluid" alt="">
                 </div>
     
@@ -332,7 +332,7 @@
                         <a><i class="bi bi-linkedin"></i></a> {%endif %}
                     </div>
                 </div>
-                <div class=" col-lg-3 col-md-6 " style="border: 1px solid black;height:fit-content;">
+                <div class=" col-lg-3 col-md-6 " style="border: 1px solid #DCDCDC;height:fit-content;">
                     <div>
                         <h4>Brands:</h4>
                         {% for brands in pks2 %}
@@ -341,7 +341,7 @@
                                         {% csrf_token %}
                                         
                                         <h6 style="width:100%;display:inline-block; margin-top:5px;margin-bottom:-10px; color:blue;">
-                                            <input type="submit" value="{{brands.brand_name|truncatewords:2}}" name="brand_title" onMouseOver="this.style.color='#2E2EFF'"onMouseOut="this.style.color='#000'" style="border: none; background-color: transparent; color: black;" />
+                                            <input type="submit" value="{{brands.brand_name}}" name="brand_title" onMouseOver="this.style.color='#2E2EFF'"onMouseOut="this.style.color='#000'" style="border: none; background-color: transparent; color: black;" />
                                         </h6>
                                     </form>
                             </div>
@@ -358,12 +358,12 @@
             
             {% for sp in sp %}
                 {% if sp.shopping_mall_name == page_title %}
-                <div class="row" style="border: 1px solid black; margin: 2px;">
+                <div class="row" style="border: 1px solid #DCDCDC; margin: 2px;">
                     <h3 style="text-align:center;">Advertisement section</h3>
                 </div>
                 <div class="row"  style="margin: 1px;">
                     <div class="col-lg-9 col-md-6">
-                        <div class="row desc">
+                        <div class="row desc"  style="margin: 1px;border: 1px solid #DCDCDC;">
                             <h4>{{sp.shopping_mall_name}} History:</h4>
                             <p>
                                 {{sp.description}}
@@ -552,7 +552,7 @@
                             Reviews
                         </div>
                     </div>
-                    <div class=" col-lg-3 col-md-6 " style="border: 1px solid black;height:fit-content ">
+                    <div class=" col-lg-3 col-md-6 " style="border: 1px solid #DCDCDC;height:fit-content ">
                         <div>
                             <h4>Shopping Malls:</h4>
                             {% for shops in sps2 %}
@@ -561,7 +561,7 @@
                                             {% csrf_token %}
                                             
                                             <h6 style="width:100%;display:inline-block; margin-top:5px;margin-bottom:-10px; color:blue;">
-                                                <input type="submit" value="{{shops.shopping_mall_name|truncatewords:3}}" name="brand_title" onMouseOver="this.style.color='#2E2EFF'"onMouseOut="this.style.color='#000'" style="border: none; background-color: transparent; color: black;" />
+                                                <input type="submit" value="{{shops.shopping_mall_name}}" name="brand_title" onMouseOver="this.style.color='#2E2EFF'"onMouseOut="this.style.color='#000'" style="border: none; background-color: transparent; color: black;" />
                                             </h6>
                                         </form>
                                 </div>
@@ -580,14 +580,14 @@
                     <div class="row"  style="margin: 1px;">
                         <h2>Other Shopping Malls:</h2>
                         {% for sps in sps %}
-                            <div class="col-lg-2 col-md-3 col-sm-2" style="border: 1px solid black; margin:5px;">
+                            <div class="col-lg-2 col-md-3 col-sm-2" style="border: 1px solid #DCDCDC; margin:5px;">
                                 <form action="brand_details" method="POST" style="">
                                     {% csrf_token %}
                                     <img src="{{sps.image_0.url}}" class="img-fluid" name="brand_title" alt=""style="padding-top:5%;">
                                 </form><form action="brand_details" method="POST">
                                     {% csrf_token %}
                                     <h5 style=" margin-top:5px;">
-                                    <input type="submit" value="{{sps.shopping_mall_name|truncatewords:2}}" name="brand_title" style="border: border: 1px solid black;width:200px; background-color: transparent;" />
+                                    <input type="submit" value="{{sps.shopping_mall_name}}" name="brand_title" style="border: border: 1px solid #DCDCDC;width:200px; background-color: transparent;" />
                                     </h5>
                                 </form>
                             </div>
@@ -599,7 +599,7 @@
         </div>
     </section>
 
-    <div class="row" style="border: 1px solid black; margin: 2px; margin-top:75px;">
+    <div class="row" style="border: 1px solid #DCDCDC; margin: 2px; margin-top:75px;">
         <h3 style="text-align:center;">Advertisement section</h3>
     </div>
 
