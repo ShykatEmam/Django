@@ -1,10 +1,6 @@
 {% load static %} {% include "link.html" %} {% include 'header.html' %}
 <!-- End Header -->
 <style>
-    body {
-        background-color: rgb(184, 194, 230);
-    }
-    
     .more_details:hover{
         
         color:rgb(4, 82, 248); 
@@ -24,6 +20,9 @@
         font-size:  20px;
         font-weight: bold;
     }
+    img{
+        background: white;
+    }
 </style>
 
 <body>
@@ -34,13 +33,38 @@
                 <h3>Advertisement section</h3>
             </div>
             <div class="row" style="margin: 1px;">
-                <div class="col-lg-2 col-md-10" style="border: 1px solid black; height:fit-content; position:sticky;">
-                    <h3>category</h3>
-                    <p>
-                        A108 Adam Street <br> New York, NY 535022<br> United States <br><br>
-                        <strong>Phone:</strong> +1 5589 55488 55<br>
-                        <strong>Email:</strong> info@example.com<br>
-                    </p>
+                <div class="col-lg-2 col-md-10" style="border: 1px solid black; height:fit-content; margin-bottom: 2%;">
+                    
+                    <h3>Filter By:</h3>
+                    <hr>
+                    <div class="area">
+                        <h5>Area:</h5>
+                        <ul>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Barisal</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Chittagong </a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Dhaka </a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Khulna </a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Mymensingh </a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Rajshahi </a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Sylhet</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Rangpur</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="area">
+                        <h5>Category:</h5>
+                        <ul>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">TV & Home Appliances
+                            </a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Electronic Devices </a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Clothes & Fashion</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Home & Lifestyle</a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Health & Beauty </a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Accessories </a></li>
+                            <li><i class="bx bx-chevron-right "></i> <a href="# ">Others</a></li>
+                        </ul>
+                    </div>
+
                 </div>
 
                 <div class="col-lg-7 col-md-10" style="background-color:#C0C0C0; padding: 1%; border: 1px solid rgba(0, 0, 0, 0.267);">
@@ -67,19 +91,17 @@
                                 </form>
                             </div>
 
-                            
-                            <div class="row">
                                 <h6>
                                     ({{mall.division}})
                                 </h6>
-                            </div>
+
                             <div class="row" style="width:250px;">
                                 <p>
                                     {{mall.address}}
                                 </p>
                             </div>
-                            <h5><u>Contact:</u></h5>
-                            <div class="row" style="margin-left:5%;">
+                            <h5 style="margin-top:-3%;"><u>Contact:</u></h5>
+                            <div class="row" style="margin-left:5%; margin-top:-5%;">
                                 
                                     <p >
                                         <ul>
@@ -98,7 +120,7 @@
                                 
                                 
                             </div>
-                            <form action="shop_details" method="POST">
+                            <form action="shop_details" method="POST"style="margin-top:-3%;">
                                 {% csrf_token %}
                                 <button type="submit" style="border: none; background-color: transparent;" name="mall_title" value="{{mall.shopping_mall_name}}">
                                     <h6 class="more_details">More details....</h6>
